@@ -1,0 +1,29 @@
+class Eca < Formula
+  desc "Editor Code Assistant (ECA) - AI pair programming capabilities agnostic of editor"
+  homepage "https://github.com/editor-code-assistant/eca"
+  version "<version>"
+
+  option "with-dynamic", "Installs the not static binary."
+
+  if OS.mac?
+    if Hardware::CPU.arm?
+      url "https://github.com/editor-code-assistant/eca/releases/download/<version>/eca-native-macos-aarch64.zip"
+      sha256 "<mac-arm-sha>"
+    else
+      url "https://github.com/editor-code-assistant/eca/releases/download/<version>/eca-native-macos-amd64.zip"
+      sha256 "<mac-amd-sha>"
+    end
+  elsif OS.linux?
+    if build.with? "dynamic"
+      url "https://github.com/editor-code-assistant/eca/releases/download/<version>/eca-native-linux-amd64.zip"
+      sha256 "<linux-sha>"
+    else
+      url "https://github.com/editor-code-assistant/eca/releases/download/<version>/eca-native-static-linux-amd64.zip"
+      sha256 "<static-linux-sha>"
+    end
+  end
+
+  def install
+    bin.install "eca"
+  end
+end
