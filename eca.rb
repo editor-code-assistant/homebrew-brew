@@ -1,25 +1,25 @@
 class Eca < Formula
   desc "Editor Code Assistant (ECA) - AI pair programming capabilities agnostic of editor"
   homepage "https://github.com/editor-code-assistant/eca"
-  version "0.66.0"
+  version "0.66.1"
 
   option "with-dynamic", "Installs the not static binary."
 
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/editor-code-assistant/eca/releases/download/0.66.0/eca-native-macos-aarch64.zip"
-      sha256 "8a7d260a93e7e8cc202dbea8f8c555a48b09dbc4aa03641acc824e8f7058f233"
+      url "https://github.com/editor-code-assistant/eca/releases/download/0.66.1/eca-native-macos-aarch64.zip"
+      sha256 "963f5efe4997afdb636643bf299088f7c2f81098b7876a218ed2b07ad67d1c90"
     else
-      url "https://github.com/editor-code-assistant/eca/releases/download/0.66.0/eca-native-macos-amd64.zip"
-      sha256 "49a216faac61f539be5f3aefb312259adf3371f9c8a2b231b45b60f4fecac8ae"
+      url "https://github.com/editor-code-assistant/eca/releases/download/0.66.1/eca-native-macos-amd64.zip"
+      sha256 "bc07960411451032e780b4e156d9e3b89af48c681c4e3379c7dc76771fc0f5fe"
     end
   elsif OS.linux?
     if build.with? "dynamic"
-      url "https://github.com/editor-code-assistant/eca/releases/download/0.66.0/eca-native-linux-amd64.zip"
-      sha256 "054a43c7287b23033a355fb06ff36c8f11d1e24b718af23bf47bb30d2e57e561"
+      url "https://github.com/editor-code-assistant/eca/releases/download/0.66.1/eca-native-linux-amd64.zip"
+      sha256 "3292182c70d5716ee3aba21ffc8c4f6d38d9c827cfe75e8d9c819b4885f932d3"
     else
-      url "https://github.com/editor-code-assistant/eca/releases/download/0.66.0/eca-native-static-linux-amd64.zip"
-      sha256 "70a22d30c45b304a627c7d054c7eaad7567d18558dc8d701d0c30c0d307dc56f"
+      url "https://github.com/editor-code-assistant/eca/releases/download/0.66.1/eca-native-static-linux-amd64.zip"
+      sha256 "be391e6724b31933a82bf46440fd704bfe33cf40292e8223e1565d9798fd0b46"
     end
   end
 
